@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/assets/images/favicon.png " type="image/x-icon">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/assets/css/webstyle.css">
+    <link rel="stylesheet" href="~/assets/css/webresponsive.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/select2.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBivBAs4MbsNiJWu3xFfhVMcb4dW1S-Wo8&libraries=places"></script>
+
+    <script type="text/javascript" src="~/assets/js/sup_jquery.js"></script>
+    <script type="text/javascript" src="~/assets/js/trigissupport.js"></script>
+    <script type="text/javascript" src="~/assets/js/godwansmapjs.js"></script>
+    <style type="text/css">
+        #map {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #loaddiv {
+        }
+
+        .infowindow * {
+            font-size: 90%;
+            margin: 0;
+        }
+    </style>
+
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row py-2">
+            <div class="col-sm-2">
+                <select id="AllDistrict" class="form-control">
+                    <option value="all" selected>All</option>
+                    <option value="502">Anantapur</option>
+                    <option value="503">Chittoor</option>
+                    <option value="504">Kadapa</option>
+                    <option value="505">East Godavari</option>
+                    <option value="523">West Godavari</option>
+                    <option value="506">Guntur</option>
+                    <option value="510">Krishna</option>
+                    <option value="511">Kurnool</option>
+                    <option value="515">Nellore</option>
+                    <option value="517">Prakasam</option>
+                    <option value="521">Vizianagaram</option>
+                    <option value="520">Visakhapatanam</option>
+                    <option value="519">Srikakulam</option>
+                </select>
+
+            </div>
+            <div class="col-sm-2">
+                <select id="Alltypes" class="form-control">
+                    <option value="all" selected>ALL</option>
+                    <option value="APSWC">APSWC</option>
+                    <option value="OGF">Other Government Facilities</option>
+                    <option value="PG">Private_Godowns</option>
+                </select>
+
+            </div>
+            <div class="col-sm-1">
+                NO OF APSWC WAREHOUSES :
+
+            </div>
+            <div class="col-sm-1">
+                <h6> <label id="labelapswc"></label></h6>
+
+            </div>
+            <div class="col-sm-2">
+                NO OF OTHER GOVERNMENT :
+
+            </div>
+            <div class="col-sm-1">
+                <h6><label id="labelogf"></label></h6>
+
+            </div>
+            <div class="col-sm-2">
+                NO OF PRIVATE GODOWNS :
+
+            </div>
+            <div class="col-sm-1">
+                <h6><label id="labelpg"></label></h6>
+
+            </div>
+
+        </div>
+        <div id="map">   </div>
+
+        <script type="text/javascript" src="~/assets/js/jquery-3.5.1.slim.min.js"></script>
+        <script type="text/javascript" src="~/assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="~/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="~/assets/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="~/assets/js/bundle.js"></script>
+        <script type="text/javascript" src="~/assets/js/myworld/build/myworld.js?0"></script>
+        <script type="text/javascript" src="~/assets/js/myworld/dummy.js"></script>
+
+
+    </div>
+
+    @RenderBody()
+
+</body>
+</html>
